@@ -1,0 +1,323 @@
+openapi: 3.0.1
+info:
+  title: Consulta NF-e
+  version: '1.0'
+  description: |-
+    ## Descrição da API - Consulta NF-e 
+    O serviço `Consulta Nota Fiscal Eletrônica (NF-e)` é disponibilizado através do `HTTP REST` oferencendo operação para consulta de informações referentes a uma determinada NF-e, através de sua chave de acesso. <br><br>
+    As informações da NF-e disponibilizadas estão de acordo com o leiaute da NF-e, disponibilizado pelo Encontro Nacional de Coordenadores e Administradores Tributários Estaduais (ENCAT). <br><br>
+    Para verificação das Notas Técnicas com as informações de leiaute da NF-e acesse o link: [Notas Técnicas](http://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=tW+YMyk/50s=) <br><br>
+    A estrutura do JSON de retorno segue as mesmas especificações dos esquemas XML dos Web Services: [Esquemas XML](http://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=/fwLvLUSmU8=) <br><br>   
+    ## API Serpro - Plataforma de Habilitação  
+    O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente. <br><br>
+    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação no link: [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf) <br><br>
+     ## Códigos de Retorno não Bilhetados 
+    | Código de retorno | Resumido | Explicação |
+    | ------------- |--------------------|-----------------------------------------------------------------------------|
+    | &nbsp           | &nbsp    | &nbsp  | 
+     | 400 | Requisição inválida | O número da chave informado não é válido. |
+    | &nbsp           | &nbsp    | &nbsp  | 
+     | 404 | Not Found | O número da chave informado não foi encontrado. |
+    | &nbsp           | &nbsp    | &nbsp  | 
+      | 500  | Erro no servidor    | Ocorreu algum erro interno.      |
+     -------------------------- <br><br>  
+    ## Solicitando assinatura com Carimbo de Tempo
+      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação `x-signature: 1`.
+      A assinatura será retornada no cabeçalho da resposta, com o nome `stamp`. <br><br>
+    ## Verificando assinatura com Carimbo de Tempo
+      Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:
+    [Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check) <br><br>
+    ## Exemplo de Chamada e Retorno
+    ### Chamada 
+    ### `https://apigateway.serpro.gov.br/nfe-trial/1/35161147508411011603551000077959551093041003` <br><br>
+    ### Retorno
+
+        {
+        "nfeProc": {
+            "NFe": {
+                "infNFe": {
+                    "infAdic": {
+                        "infCpl": "A CONTRIBUICAO RURAL SERA RECOLHIDA CONFORME LEI VIGENTE                   COD.FORN: 03170 - NF.FORN: 000010218 000 000000000                         N.DE ORDEM - 06.163.111-0                                                  IE:  0011661970605                                                         COND.PAGTO. 02154      DAT.VENCTO 21/12/2016                               CD: 930 FORN: 3170 SECAO: 22 SEQ: 61635430 CRT 3"
+                    },
+                    "det": {
+                        "nItem": 1,
+                        "prod": {
+                            "cEAN": "",
+                            "cProd": "0008891",
+                            "qCom": 1120,
+                            "cEANTrib": "",
+                            "vUnTrib": 46,
+                            "qTrib": 1120,
+                            "vProd": 51520,
+                            "xProd": "TOMATE 2A                     CD KG",
+                            "vUnCom": 46,
+                            "indTot": 1,
+                            "uTrib": 20,
+                            "NCM": "07020000",
+                            "uCom": 20,
+                            "CFOP": 2102
+                        },
+                        "imposto": {
+                            "ICMS": {
+                                "ICMS40": {
+                                    "orig": 0,
+                                    "CST": 41
+                                }
+                            },
+                            "COFINS": {
+                                "COFINSOutr": {
+                                    "vCOFINS": 0,
+                                    "CST": 99,
+                                    "vBC": 0,
+                                    "pCOFINS": 0
+                                }
+                            },
+                            "PIS": {
+                                "PISOutr": {
+                                    "vPIS": 0,
+                                    "CST": 99,
+                                    "vBC": 0,
+                                    "pPIS": 0
+                                }
+                            }
+                        }
+                    },
+                    "total": {
+                        "ICMSTot": {
+                            "vICMSUFDest": 0,
+                            "vICMSUFRemet": 0,
+                            "vCOFINS": 0,
+                            "vBCST": 0,
+                            "vICMSDeson": 0,
+                            "vFCPUFDest": 0,
+                            "vProd": 51520,
+                            "vSeg": 0,
+                            "vNF": 51520,
+                            "vPIS": 0,
+                            "vBC": 0,
+                            "vST": 0,
+                            "vICMS": 0,
+                            "vII": 0,
+                            "vDesc": 0,
+                            "vOutro": 0,
+                            "vIPI": 0,
+                            "vFrete": 0
+                        }
+                    },
+                    "entrega": {
+                        "UF": "SP",
+                        "xLgr": "ESTRADA FICTICIA, 10",
+                        "xMun": "SAO PAULO",
+                        "CNPJ": 82743369000159,
+                        "nro": 20,
+                        "cMun": 3550308,
+                        "xBairro": "JARDIM FICTICIO"
+                    },
+                    "Id": "NFe35161147508411011603551000077959551093041003",
+                    "ide": {
+                        "tpNF": 0,
+                        "mod": 55,
+                        "indPres": 9,
+                        "tpImp": 1,
+                        "nNF": 7795955,
+                        "cMunFG": 3550308,
+                        "procEmi": 0,
+                        "finNFe": 1,
+                        "dhEmi": "2016-11-01T12:54:01-02:00",
+                        "tpAmb": 1,
+                        "indFinal": 0,
+                        "dhSaiEnt": "2016-11-01T12:54:01-02:00",
+                        "idDest": 2,
+                        "tpEmis": 1,
+                        "cDV": 2,
+                        "cUF": 35,
+                        "NFref": {
+                            "refNFP": {
+                                "mod": "04",
+                                "cUF": 31,
+                                "nNF": 10218,
+                                "CPF": 48402166733,
+                                "serie": 0,
+                                "IE": "0023123456789",
+                                "AAMM": 1610
+                            }
+                        },
+                        "serie": 100,
+                        "natOp": "COMPRAS",
+                        "cNF": "09304100",
+                        "verProc": "NDDigital NFe 4.5.3",
+                        "indPag": 2
+                    },
+                    "emit": {
+                        "CNAE": "0000000",
+                        "xNome": "CIA BRASILEIRA FICTICIA",
+                        "IM": 0,
+                        "CRT": 3,
+                        "xFant": "CIA BRASILEIRA FICTICIA",
+                        "CNPJ": 24631565000135,
+                        "enderEmit": {
+                            "fone": "00000005551234",
+                            "UF": "SP",
+                            "xPais": "BRASIL",
+                            "cPais": 1058,
+                            "xLgr": "ESTRADA FICTICIA, 20",
+                            "xMun": "SAO PAULO",
+                            "nro": 20,
+                            "cMun": 3550308,
+                            "xBairro": "JARDIM FICTICIO",
+                            "CEP": "00012300"
+                        },
+                        "IE": 123456789123
+                    },
+                    "dest": {
+                        "xNome": "ARNALDO FICTICIO ALMEIDA",
+                        "CPF": 11636965792,
+                        "enderDest": {
+                            "fone": "0000005551234",
+                            "UF": "MG",
+                            "xPais": "BRASIL",
+                            "cPais": 1058,
+                            "xLgr": "RODOVIA MG FICTICIA",
+                            "xMun": "SAO FICTICIO",
+                            "nro": "S/N",
+                            "cMun": 3115003,
+                            "xBairro": "ZONA RURAL",
+                            "CEP": 12312300
+                        },
+                        "IE": "1234567891234",
+                        "indIEDest": 1
+                    },
+                    "versao": 3.1,
+                    "retirada": {
+                        "UF": "SP",
+                        "xLgr": "ESTRADA FICTICIA, 20",
+                        "xMun": "SAO PAULO",
+                        "CNPJ": 28352186000167,
+                        "nro": 20,
+                        "cMun": 3550308,
+                        "xBairro": "JARDIM FICTICIO"
+                    },
+                    "transp": {
+                        "modFrete": 1,
+                        "vol": {
+                            "pesoL": 0,
+                            "esp": "UNIDADES",
+                            "qVol": 22400,
+                            "pesoB": 24640
+                        }
+                    }
+                }
+            },
+            "versao": 3.1
+          }
+        }
+servers:
+  - url: 'https://gateway.apiserpro.serpro.gov.br/consulta-nfe-trial/api/v1/nfe'
+    description: Trial
+  - url: 'https://gateway.apiserpro.serpro.gov.br/consulta-nfe-trial/api/v1/nfe'
+    description: Produção
+security:
+  - APIKEY: []
+    OAuth2: []
+    Authorization: []
+paths:
+  '/{chave}':
+    get:
+      tags:
+        - Consulta NF-e
+      summary: Consulta Nota Fiscal Eletrônica
+      x-auth-type: Bearer
+      x-throttling-tier: Unlimited
+      description: |+
+        Retorna as informações da NF-e com a chave de acesso informada. 
+        ### Notas Fiscais Eletrônicas disponíveis para Degustação
+        | Chave |
+        | -------------------------------------------- |
+        | 35170608530528000184550000000154301000771561 |
+        | 35161147508411011603551000077959551093041003 |
+        | 53131205035672000156550010000004991543410167 |
+        | 42140612687276000179550010001505671172228752 |
+        | 35140903608306000202555000001100251571436929 |
+        | 53150337992500000167550010000029521000029516 |
+        | 31150917591579000107550010000014321081035918 |
+        | 35151200991908000104550020000063951000184833 |
+        | 31160906347409006953550110008369841081956475 |
+        | 31170309339936000973550250002397736362483965 |
+        | 35160900623904000335550010028792431858713854 |
+        | 35170300776574000156550020009091941178378523 |
+        | 53160911510448000171550010000106771000187760 |
+        | 52160819015622000111550010000007051300828370 |
+        | 53160621182711000102550010000012921000042921 |
+        | 52160609303953000101550010000008711000045330 |
+        | 53151205642646000196550010000287891000219878 |
+        | 53160713453539000148550010000009101000070190 |
+        | 52151013766790000162550010000028401250000010 |
+        | 53160705642646000196550010000298141000284189 |
+        | 52160400945852000151550010000041771020601080 | 
+        
+      parameters:
+        - name: chave
+          in: path
+          description: 'Chave de acesso da NF-e (44 dígitos, sem espaços)'
+          required: true
+          schema:
+            type: string
+        - name: X-signature
+          in: header
+          description: 'Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.'
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Retorna os dados da NF-e correspondente à chave de acesso informada
+        '400':
+          description: A chave de acesso informada não é válida.
+        '404':
+          description: Não existe NF-e com chave de acesso informada.
+        '500':
+          description: Erro interno do servidor
+  '/status':
+    get:
+      tags:
+        - Status
+      summary: Verifica status da API
+      responses:
+        '200':
+          description: Serviço disponível
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"
+        '500':
+          description: Serviço indisponível
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00" 
+components:
+  schemas:
+    Status:
+      type: object
+      properties:
+        lastUpdateAt:
+          type: string
+          format: date-time   
+  securitySchemes:
+    APIKEY:
+      type: apiKey
+      name: x-jwt-assertion
+      in: header
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://apigateway.serpro.gov.br/token'
+    Authorization:
+      type: http
+      description: Autenticação para ambiente trial
+      scheme: bearer
