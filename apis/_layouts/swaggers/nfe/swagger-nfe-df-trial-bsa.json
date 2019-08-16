@@ -1,0 +1,124 @@
+{
+  "host": "apigateway.serpro.gov.br",
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "swagger": "2.0",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "info": {
+    "version": "1.0",
+    "title": "Consulta NF-e DF",
+    "description": "Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nO serviço `Consulta Nota Fiscal Eletrônica (NF-e)` é disponibilizado através do `HTTP REST` oferencendo operação para consulta de informações referentes a uma determinada NF-e, através de sua chave de acesso.\n<br>\n ## Retorno \n\n   O retorno poderá ser do tipo `arquivo.json` ou `arquivo.xml`"
+  },
+  "basePath": "/consulta-nfe-df-trial/api",
+  "paths": {
+    "/v1/nfe/{chave}": {
+      "get": {
+        "tags": [
+          "Consulta NF-e DF"
+        ],
+        "summary": "Consulta Nota Fiscal Eletrônica DF",
+        "x-auth-type": "Bearer",
+        "x-throttling-tier": "Unlimited",
+        "description": "Retorna as informações da NF-e com a chave de acesso informada. \n### Notas Fiscais Eletrônicas disponíveis para Degustação\n| Chave | Observação |\n| ---------------------- | ----------|\n| 35170608530528000184550000000154301000771561 | |\n| 35161147508411011603551000077959551093041003 | |\n| 53131205035672000156550010000004991543410167 | |\n| 42140612687276000179550010001505671172228752 | |\n| 35140903608306000202555000001100251571436929 | |\n| 53150337992500000167550010000029521000029516 | |\n| 31150917591579000107550010000014321081035918 | |\n| 35151200991908000104550020000063951000184833 | |\n| 31160906347409006953550110008369841081956475 | |\n| 31170309339936000973550250002397736362483965 | |\n| 35160900623904000335550010028792431858713854 | |\n| 35170300776574000156550020009091941178378523 | |\n| 53160911510448000171550010000106771000187760 | |\n| 52160819015622000111550010000007051300828370 | |\n| 53160621182711000102550010000012921000042921 | |\n| 52160609303953000101550010000008711000045330 | |\n| 53151205642646000196550010000287891000219878 | |\n| 53160713453539000148550010000009101000070190 | |\n| 52151013766790000162550010000028401250000010 | |\n| 53160705642646000196550010000298141000284189 | |\n| 52160400945852000151550010000041771020601080 | |\n| 24190201243220000109550010000007251000007252 | |\n| 24190420412822000197550010000004701000001816 | |\n| 25190400785860000188550010000000061000000868 | |\n| 29190332994770000193550020000000107000000124 | |\n| 33190403282458000179550010001434641841176079 | |\n| 87878774456468954646464654654546545446579312 | Essa NFe possui todos os array |\n|",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "chave",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Chave de acesso da NF-e (44 dígitos, sem espaços)"
+          },
+          {
+            "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
+            "name": "X-signature",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "description": "Retorno do tipo application/json ou application/xml",
+            "name": "Accept",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados da NF-e correspondente à chave de acesso informada"
+          },
+          "400": {
+            "description": "A chave de acesso informada não é válida."
+          },
+          "404": {
+            "description": "Não existe NF-e com chave de acesso informada."
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "Serviço disponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
+          },
+          "500": {
+            "description": "Serviço indisponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Status": {
+      "type": "object",
+      "properties": {
+        "lastUpdateAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}
