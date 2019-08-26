@@ -6,9 +6,9 @@
             "logo": "images/consulta-cpf.png",
             "style": "width: 142px;",
             "endpointMock": "/consulta-cpf-trial/1",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/cpf/swagger-cpf-df-trial-",
+            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/layouts/swaggers/cpf/swagger-cpf-df-trial-",
             "endpointProducao": "/consulta-cpf/v1",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/cpf/swagger-cpf-prod-"
+            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/layouts/swaggers/cpf/swagger-cpf-prod-"
         },
         {
             "api": "cnpj",
@@ -16,9 +16,9 @@
             "logo": "images/consulta-cnpj.png",
             "style": "width: 161px;",
             "endpointMock": "/consulta-cnpj-trial/1",
-            "urlJsonSwaggerMock": "https://https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-df-trial-",
+            "urlJsonSwaggerMock": "https://https://simei20.github.io/paginas-apis/apis/master/layouts/swaggers/cnpj/swagger-cnpj-df-trial-",
             "endpointProducao": "/consulta-cnpj/v1",
-            "urlJsonSwaggerProducao": "https://https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-prod-"
+            "urlJsonSwaggerProducao": "https://https://simei20.github.io/paginas-apis/apis/master/layouts/swaggers/cnpj/swagger-cnpj-prod-"
         },
         {
             "api": "nfe",
@@ -26,9 +26,9 @@
             "logo": "images/consulta-nfe.png",
             "style": "width: 153px;",
             "endpointMock": "/nfe-trial/1",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/nfe/swagger-nfe-df-trial-",
+            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/layouts/swaggers/nfe/swagger-nfe-df-trial-",
             "endpointProducao": "/nfe/1",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/nfe/swagger-nfe-prod-"
+            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/layouts/swaggers/nfe/swagger-nfe-prod-"
         },
         {
             "api": "datavalid",
@@ -76,9 +76,9 @@
             "logo": "images/vio-letras.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/viodec-trial/v1/decode",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-",
+            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/layouts/swaggers/vio/swagger-viodec-prod-",
             "endpointProducao": "https://apigateway.serpro.gov.br/viodec/v1/decode",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-"
+            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/layouts/swaggers/vio/swagger-viodec-prod-"
         }
    ]
 }
