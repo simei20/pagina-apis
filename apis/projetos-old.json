@@ -6,9 +6,9 @@
             "logo": "images/consulta-cpf.png",
             "style": "width: 142px;",
             "endpointMock": "/consulta-cpf-trial/1",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/cpf/swagger-cpf-df-trial-",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cpf/swagger-cpf-df-trial-",
             "endpointProducao": "/consulta-cpf/v1",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/cpf/swagger-cpf-prod-"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cpf/swagger-cpf-prod-"
         },
         {
             "api": "cnpj",
@@ -16,9 +16,9 @@
             "logo": "images/consulta-cnpj.png",
             "style": "width: 161px;",
             "endpointMock": "/consulta-cnpj-trial/1",
-            "urlJsonSwaggerMock": "https://https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-df-trial-",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-df-trial-",
             "endpointProducao": "/consulta-cnpj/v1",
-            "urlJsonSwaggerProducao": "https://https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-prod-"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-prod-"
         },
         {
             "api": "nfe",
@@ -26,9 +26,9 @@
             "logo": "images/consulta-nfe.png",
             "style": "width: 153px;",
             "endpointMock": "/nfe-trial/1",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/nfe/swagger-nfe-df-trial-",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/nfe/swagger-nfe-df-trial-",
             "endpointProducao": "/nfe/1",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/nfe/swagger-nfe-prod-"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/nfe/swagger-nfe-prod-"
         },
         {
             "api": "datavalid",
@@ -36,9 +36,9 @@
             "logo": "images/datavalid-antigo-basico.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/datavalid/degustacao/DocumentacaoPlanoBasico.json",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBasico.json",
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/basico/vbeta1",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/datavalid/producao/DocumentacaoPlanoBasico.json"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBasico.json"
         },
         {
             "api": "datavalid",
@@ -46,9 +46,9 @@
             "logo": "images/datavalid-antigo-biometria.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json",
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/datavalid/producao/DocumentacaoPlanoBiometria.json"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBiometria.json"
         },
         {
             "api": "datavalid",
@@ -56,9 +56,9 @@
             "logo": "images/datavalid-plan-novo.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/biometria/vbeta1",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/datavalid/degustacao/DocumentacaoPlanoNovo.json",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoNovo.json",
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/datavalid/producao/DocumentacaoPlanoNovo.json"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo.json"
         },
         {
             "api": "datavalid",
@@ -68,7 +68,7 @@
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/biometria/vbeta1",
             "urlJsonSwaggerMock": "",
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/datavalid/producao/DocumentacaoPlanoNovo-entidade.json"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo-entidade.json"
         },
          {
             "api": "viodec",
@@ -76,9 +76,9 @@
             "logo": "images/vio-letras.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/viodec-trial/v1/decode",
-            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-",
             "endpointProducao": "https://apigateway.serpro.gov.br/viodec/v1/decode",
-            "urlJsonSwaggerProducao": "https://simei20.github.io/paginas-apis/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-"
         }
    ]
 }
