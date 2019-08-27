@@ -16,7 +16,7 @@
             "logo": "images/consulta-cnpj.png",
             "style": "width: 161px;",
             "endpointMock": "/consulta-cnpj-trial/1",
-            "urlJsonSwaggerMock": "https://https://simei20.github.io/paginas-apis/apis/layouts/swaggers/cnpj/swagger-cnpj-df-trial-",
+            "urlJsonSwaggerMock": "https://simei20.github.io/paginas-apis/apis/layouts/swaggers/cnpj/swagger-cnpj-df-trial-",
             "endpointProducao": "/consulta-cnpj/v1",
             "urlJsonSwaggerProducao": "https://https://simei20.github.io/paginas-apis/apis/layouts/swaggers/cnpj/swagger-cnpj-prod-"
         },
