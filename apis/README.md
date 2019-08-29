@@ -2,7 +2,7 @@
 
 ## Endereço para acesso padrao as paginas da API:
 
-https://devserpro.github.io/apis/
+https://simei20.github.io/apis/
 
 ## Para mostrar link apenas para determinada API (ex: API CPF)
 
