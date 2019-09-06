@@ -69,7 +69,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna os dados da NF-e correspondente à chave de acesso informada"
+            "description": "Retorna os dados da NF-e correspondente à chave de acesso informada",
+            "schema": {
+              "$ref": "#/definitions/NFe"
+            }
           },
           "400": {
             "description": "A chave de acesso informada não é válida."
@@ -113,6 +116,16 @@
     }
   },
   "definitions": {
+    "NFe": {
+      "properties": {
+        "cnpj": {
+          "type": "string"
+        },
+        "situacao": {
+          "type": "string"
+        }
+      }
+    },    
     "Status": {
       "type": "object",
       "properties": {
