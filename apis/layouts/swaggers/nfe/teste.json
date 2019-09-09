@@ -39,7 +39,7 @@
         "produces": [
           "application/json",
           "application/xml"
-	],
+        ],
         "parameters": [
           {
             "name": "chave",
@@ -57,12 +57,6 @@
           {
             "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres",
             "name": "X-Request-Tag",
-            "in": "header",
-            "type": "string"
-          },
-          {
-            "description": "Retorno do tipo application/json ou application/xml",
-            "name": "Accept",
             "in": "header",
             "type": "string"
           }
@@ -117,15 +111,663 @@
   },
   "definitions": {
     "NFe": {
+      "type": "object",
       "properties": {
-        "cnpj": {
-          "type": "string"
+        "protNFe": {
+          "type": "object",
+          "properties": {
+            "infProt": {
+              "type": "object",
+              "properties": {
+                "nProt": {
+                  "type": "integer",
+                  "example": 55455534534
+                },
+                "digVal": {
+                  "type": "string",
+                  "example": "jfdgh76tr542786rteuhyfbwef8="
+                },
+                "dhRecbto": {
+                  "type": "string",
+                  "example": "2019-07-22T09:34:06-03:00"
+                },
+                "Id": {
+                  "type": "string",
+                  "example": "Id445345345"
+                },
+                "chNFe": {
+                  "type": "string",
+                  "example": "87878774456468954646464654654546545446579312"
+                },
+                "xMotivo": {
+                  "type": "string",
+                  "example": "Autorizado o uso da NF-e"
+                },
+                "cStat": {
+                  "type": "number",
+                  "example": 100
+                }
+              }
+            }
+          }
         },
-        "situacao": {
+        "NFe": {
+          "type": "object",
+          "properties": {
+            "InfNFe": {
+              "type": "object",
+              "properties": {
+                "InfAdic": {
+                  "type": "object",
+                  "properties": {
+                    "infCpl": {
+                      "type": "string",
+                      "example": "Lorem ipsum dolor..."
+                    },
+                    "obsCont": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "xCampo": {
+                            "type": "string",
+                            "example": "Qualquer coisa 1"
+                          },
+                          "xTexto": {
+                            "type": "string",
+                            "example": "Qualquer coisa 2"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "det": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "nItem": {
+                        "type": "integer",
+                        "example": 1
+                      },
+                      "prod": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "cEAN": {
+                              "type": "string",
+                              "example": "SEM GTIN"
+                            },
+                            "cProd": {
+                              "type": "string",
+                              "example": "JC59-00035A-SI"
+                            },
+                            "qCom": {
+                              "type": "number",
+                              "example": 1
+                            },
+                            "cEANTrib": {
+                              "type": "string",
+                              "example": "SEM GTIN"
+                            },
+                            "vUnTrib": {
+                              "type": "number",
+                              "example": 265.79
+                            },
+                            "qTrib": {
+                              "type": "number",
+                              "example": 1
+                            },
+                            "vProd": {
+                              "type": "number",
+                              "example": 265.79
+                            },
+                            "xProd": {
+                              "type": "string",
+                              "example": "UNIDADE DE DISCO RIGIDO 320GB"
+                            },
+                            "vUnCom": {
+                              "type": "number",
+                              "example": 265.79
+                            },
+                            "indTot": {
+                              "type": "integer",
+                              "example": 1
+                            },
+                            "uTrib": {
+                              "type": "string",
+                              "example": "UN"
+                            },
+                            "NCM": {
+                              "type": "integer",
+                              "example": 84717012
+                            },
+                            "uCom": {
+                              "type": "string",
+                              "example": "UN"
+                            },
+                            "CFOP": {
+                              "type": "integer",
+                              "example": 5949
+                            },
+                            "CEST": {
+                              "type": "integer",
+                              "example": 2103300
+                            },
+                            "rastro": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "nLote": {
+                                    "type": "string",
+                                    "example": "Lote 1"
+                                  },
+                                  "qLote": {
+                                    "type": "number",
+                                    "example": 18
+                                  },
+                                  "dFab": {
+                                    "type": "string",
+                                    "example": "2019-07-22"
+                                  },
+                                  "dVal": {
+                                    "type": "string",
+                                    "example": "2020-06-22"
+                                  },
+                                  "cAgreg": {
+                                    "type": "string",
+                                    "example": "Agregador 1"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "imposto": {
+                        "type": "object",
+                        "properties": {
+                          "ICMS": {
+                            "type": "object",
+                            "properties": {
+                              "orig": {
+                                "type": "integer",
+                                "example": 1
+                              },
+                              "CST": {
+                                "type": "integer",
+                                "example": 41
+                              }
+                            }
+                          },
+                          "IPI": {
+                            "type": "object",
+                            "properties": {
+                              "IPINT": {
+                                "type": "object",
+                                "properties": {
+                                  "CST": {
+                                    "type": "integer",
+                                    "example": 53
+                                  }
+                                }
+                              },
+                              "cEnq": {
+                                "type": "integer",
+                                "example": 999
+                              }
+                            }
+                          },
+                          "COFINS": {
+                            "type": "object",
+                            "properties": {
+                              "COFINSNT": {
+                                "type": "object",
+                                "properties": {
+                                  "CST": {
+                                    "type": "integer",
+                                    "example": "07"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "PIS": {
+                            "type": "object",
+                            "properties": {
+                              "PISNT": {
+                                "type": "object",
+                                "properties": {
+                                  "CST": {
+                                    "type": "integer",
+                                    "example": "07"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "total": {
+                  "type": "object",
+                  "properties": {
+                    "ICMSTot": {
+                      "type": "object",
+                      "properties": {
+                        "vCONFINS": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vBCST": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vICMSDeson": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vProd": {
+                          "type": "number",
+                          "example": 265.79
+                        },
+                        "vSeq": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vFCP": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vFCPST": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vNF": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vPIS": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vIPIDevol": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vBC": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vST": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vICMS": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vII": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vFCPSTRet": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vDESC": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vOutro": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vIPI": {
+                          "type": "number",
+                          "example": 0
+                        },
+                        "vFrete": {
+                          "type": "number",
+                          "example": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                "pag": {
+                  "type": "object",
+                  "properties": {
+                    "detPag": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "vPag": {
+                            "type": "number",
+                            "example": 265.79
+                          },
+                          "tpag": {
+                            "type": "number",
+                            "example": 99
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "Id": {
+                  "type": "string",
+                  "example": "NFe87878774456468954646464654654546545446579312"
+                },
+                "ide": {
+                  "type": "object",
+                  "properties": {
+                    "tpNF": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "mod": {
+                      "type": "integer",
+                      "example": 55
+                    },
+                    "indPres": {
+                      "type": "integer",
+                      "example": 0
+                    },
+                    "tpImp": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "nNF": {
+                      "type": "integer",
+                      "example": 1353368
+                    },
+                    "cMunFG": {
+                      "type": "integer",
+                      "example": 3534401
+                    },
+                    "procEmi": {
+                      "type": "integer",
+                      "example": 0
+                    },
+                    "finNFe": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "dhEmi": {
+                      "type": "string",
+                      "example": "2019-07-22T09:33:31-03:00"
+                    },
+                    "tpAmb": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "indFinal": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "dhSaiEnt": {
+                      "type": "string",
+                      "example": "2019-07-22T09:33:31-03:00"
+                    },
+                    "idDest": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "tpEmis": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "cDV": {
+                      "type": "integer",
+                      "example": 0
+                    },
+                    "cUF": {
+                      "type": "integer",
+                      "example": 35
+                    },
+                    "serie": {
+                      "type": "integer",
+                      "example": 3
+                    },
+                    "natOp": {
+                      "type": "string",
+                      "example": "Outra saida merc./prestacao serv. nao espec."
+                    },
+                    "cNF": {
+                      "type": "string",
+                      "example": "00012763"
+                    },
+                    "verProc": {
+                      "type": "string",
+                      "example": "5.0.1500.2985"
+                    }
+                  }
+                },
+                "emit": {
+                  "type": "object",
+                  "properties": {
+                    "CNAE": {
+                      "type": "integer",
+                      "example": 34324
+                    },
+                    "xNome": {
+                      "type": "string",
+                      "example": "ACME SERVICOS LTDA"
+                    },
+                    "IM": {
+                      "type": "integer",
+                      "example": 96852
+                    },
+                    "CRT": {
+                      "type": "integer",
+                      "example": 3
+                    },
+                    "xFant": {
+                      "type": "string",
+                      "example": "ACME SERVICOS LTDA"
+                    },
+                    "CNPJ": {
+                      "type": "string",
+                      "example": "ACME SERVICOS LTDA"
+                    },
+                    "enderEmit": {
+                      "type": "object",
+                      "properties": {
+                        "fone": {
+                          "type": "integer",
+                          "example": 4534534534
+                        },
+                        "UF": {
+                          "type": "string",
+                          "example": "SP"
+                        },
+                        "xPais": {
+                          "type": "string",
+                          "example": "Brasil"
+                        },
+                        "cPais": {
+                          "type": "integer",
+                          "example": 1058
+                        },
+                        "xLgr": {
+                          "type": "string",
+                          "example": "SP"
+                        },
+                        "xMun": {
+                          "type": "string",
+                          "example": "Brasil"
+                        },
+                        "nro": {
+                          "type": "integer",
+                          "example": 628
+                        },
+                        "cMun": {
+                          "type": "integer",
+                          "example": 454545
+                        },
+                        "xBairro": {
+                          "type": "string",
+                          "example": "Bairro do Chaves"
+                        },
+                        "CEP": {
+                          "type": "string",
+                          "example": "06200000"
+                        }
+                      }
+                    },
+                    "IE": {
+                      "type": "integer",
+                      "example": 8465465454
+                    }
+                  }
+                },
+                "dest": {
+                  "type": "object",
+                  "properties": {
+                    "xNome": {
+                      "type": "string",
+                      "example": "ACME SERVICOS LTDA"
+                    },
+                    "CNPJ": {
+                      "type": "string",
+                      "example": "4545345345345"
+                    },
+                    "enderDest": {
+                      "type": "object",
+                      "properties": {
+                        "xCpl": {
+                          "type": "string",
+                          "example": "GALP 1 E 2"
+                        },
+                        "fone": {
+                          "type": "integer",
+                          "example": 4534534534
+                        },
+                        "UF": {
+                          "type": "string",
+                          "example": "SP"
+                        },
+                        "xPais": {
+                          "type": "string",
+                          "example": "Brasil"
+                        },
+                        "cPais": {
+                          "type": "integer",
+                          "example": 1058
+                        },
+                        "xLgr": {
+                          "type": "string",
+                          "example": "AV Paulista"
+                        },
+                        "xMun": {
+                          "type": "string",
+                          "example": "Oscasco"
+                        },
+                        "nro": {
+                          "type": "integer",
+                          "example": 628
+                        },
+                        "cMun": {
+                          "type": "integer",
+                          "example": 454545
+                        },
+                        "xBairro": {
+                          "type": "string",
+                          "example": "Bairro do Chaves"
+                        },
+                        "CEP": {
+                          "type": "string",
+                          "example": "06200000"
+                        }
+                      }
+                    },
+                    "IE": {
+                      "type": "integer",
+                      "example": 8465465454
+                    },
+                    "indIEDest": {
+                      "type": "integer",
+                      "example": 9
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "acme@acme.com"
+                    }
+                  }
+                },
+                "transp": {
+                  "type": "object",
+                  "properties": {
+                    "modFrete": {
+                      "type": "integer",
+                      "example": 0
+                    },
+                    "vol": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "pesoL": {
+                            "type": "number",
+                            "example": 0.03
+                          },
+                          "qVol": {
+                            "type": "integer",
+                            "example": 1
+                          },
+                          "pesoBt": {
+                            "type": "number",
+                            "example": 0.033
+                          }
+                        }
+                      }
+                    },
+                    "transporta": {
+                      "type": "object",
+                      "properties": {
+                        "xNone": {
+                          "type": "string",
+                          "example": "John Doe da Silva"
+                        },
+                        "UF": {
+                          "type": "string",
+                          "example": "SP"
+                        },
+                        "xEnder": {
+                          "type": "string",
+                          "example": "Rua 1"
+                        },
+                        "xMun": {
+                          "type": "string",
+                          "example": "Sao Paulo"
+                        },
+                        "CNPJ": {
+                          "type": "string",
+                          "example": "4654654654654"
+                        },
+                        "IE": {
+                          "type": "integer",
+                          "example": 8789789789
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Versao": {
           "type": "string"
         }
       }
-    },    
+    },
     "Status": {
       "type": "object",
       "properties": {
